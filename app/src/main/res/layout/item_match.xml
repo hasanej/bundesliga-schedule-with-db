@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="5dp"
-    android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="5dp"
+              android:orientation="vertical">
 
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/dateLastMatch"
+                android:textColor="@color/colorDateLastMatch"
                 android:layout_gravity="center"
                 android:id="@+id/txtDate"
                 android:text="@string/text_empty"/>
@@ -46,12 +46,6 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
-
-                    <!--<ImageView-->
-                        <!--android:layout_width="60dp"-->
-                        <!--android:layout_height="60dp"-->
-                        <!--android:id="@+id/imgLogoHome"-->
-                        <!--android:src="@drawable/img_arsenal"/>-->
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -93,12 +87,6 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical">
-
-                    <!--<ImageView-->
-                        <!--android:layout_width="60dp"-->
-                        <!--android:layout_height="60dp"-->
-                        <!--android:id="@+id/imgLogoAway"-->
-                        <!--android:src="@drawable/img_arsenal"/>-->
 
                     <TextView
                         android:layout_width="wrap_content"
