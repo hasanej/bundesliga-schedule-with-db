@@ -9,38 +9,47 @@ import io.reactivex.schedulers.Schedulers
 import io.reactivex.subscribers.ResourceSubscriber
 
 class DetailMatchPresenter(
-    val view : DetailMatchView.View,
-    val teamRepositoryImplementation: TeamRepositoryImplementation) : DetailMatchView.Presenter {
+    val view: DetailMatchView.View,
+    val teamRepositoryImplementation: TeamRepositoryImplementation
+) : DetailMatchView.Presenter {
     val compositeDisposable = CompositeDisposable()
 
     override fun getLogoHome(id: String) {
-        compositeDisposable.add(teamRepositoryImplementation.getTeamsDetail(id)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeOn(Schedulers.io())
-            .subscribeWith(object: ResourceSubscriber<TeamResponse>(){
-                override fun onComplete() {}
+        compositeDisposable.add(
+            teamRepositoryImplementation.getTeamsDetail(id)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribeWith(object : ResourceSubscriber<TeamResponse>() {
+                    override fun onComplete() {}
 
-                override fun onNext(t: TeamResponse) { view.showLogoHome(t.teams[0]) }
+                    override fun onNext(t: TeamResponse) {
+                        view.showLogoHome(t.teams[0])
+                    }
 
-                override fun onError(t: Throwable?) {}
-            })
+                    override fun onError(t: Throwable?) {}
+                })
         )
     }
 
 
-    override fun getLogoAway(id:String) {
-        compositeDisposable.add(teamRepositoryImplementation.getTeamsDetail(id)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeOn(Schedulers.io())
-            .subscribeWith(object: ResourceSubscriber<TeamResponse>(){
-                override fun onComplete() {}
+    override fun getLogoAway(id: String) {
+        compositeDisposable.add(
+            teamRepositoryImplementation.getTeamsDetail(id)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribeWith(object : ResourceSubscriber<TeamResponse>() {
+                    override fun onComplete() {}
 
-                override fun onNext(t: TeamResponse) { view.showLogoAway(t.teams[0]) }
+                    override fun onNext(t: TeamResponse) {
+                        view.showLogoAway(t.teams[0])
+                    }
 
-                override fun onError(t: Throwable?) {}
-            })
+                    override fun onError(t: Throwable?) {}
+                })
         )
     }
 
-    override fun onDestroyPresenter() { compositeDisposable.dispose() }
+    override fun onDestroyPresenter() {
+        compositeDisposable.dispose()
+    }
 }
