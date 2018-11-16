@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_detail.*
 class DetailActivity : AppCompatActivity(), DetailMatchView.View {
     lateinit var event: EventData
     lateinit var presenter: DetailMatchPresenter
+    private var isFavorite: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
