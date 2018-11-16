@@ -26,6 +26,9 @@ class MatchListAdapter(val eventList: List<EventData>, val context: Context?) :
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(event: EventData) {
+            if (event.intHomeScore == null) {
+                itemView.txtDate.setTextColor(itemView.context.resources.getColor(R.color.colorPrimary))
+            }
             itemView.txtDate.text = event.dateEvent?.let { DateUtil.formatDateToMatch(it) }
             itemView.txtNameHome.text = event.strHomeTeam
             itemView.txtNameAway.text = event.strAwayTeam
