@@ -3,7 +3,7 @@ package id.hasaneljabir.bundesligaschedule.model
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
-import java.util.Date
+import java.util.*
 
 @Parcelize
 data class EventData(
@@ -44,4 +44,4 @@ data class EventData(
     @SerializedName("strSeason") var strSeason: String?,
     @SerializedName("strSport") var strSport: String?,
     @SerializedName("strTime") var strTime: String
-):Parcelable
+) : Parcelable
