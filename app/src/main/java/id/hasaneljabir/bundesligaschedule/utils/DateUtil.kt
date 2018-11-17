@@ -1,8 +1,7 @@
 package id.hasaneljabir.bundesligaschedule.utils
 
 import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
+import java.util.*
 
 object DateUtil {
     fun formatDateToMatch(date: Date): String {
