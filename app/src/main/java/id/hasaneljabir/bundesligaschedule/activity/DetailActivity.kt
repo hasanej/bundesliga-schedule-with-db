@@ -39,6 +39,7 @@ class DetailActivity : AppCompatActivity(), DetailMatchView.View {
         event = intent.getParcelableExtra("match")
         presenter.getLogoHome(event.idHomeTeam)
         presenter.getLogoAway(event.idAwayTeam)
+        presenter.checkMatch(event.idEvent)
         initData(event)
         supportActionBar?.title = event.strEvent
     }
