@@ -31,6 +31,7 @@ class FavoriteMatchPresenter(
                     .subscribeWith(object : ResourceSubscriber<EventResponse>() {
                         override fun onComplete() {
                             view.hideLoading()
+                            view.hideSwipeRefresh()
                         }
 
                         override fun onNext(t: EventResponse) {
@@ -41,6 +42,7 @@ class FavoriteMatchPresenter(
                         override fun onError(t: Throwable?) {
                             view.displayFootballMatch(Collections.emptyList())
                             view.hideLoading()
+                            view.hideSwipeRefresh()
                         }
 
                     })
@@ -49,6 +51,7 @@ class FavoriteMatchPresenter(
 
         if (favList.isEmpty()) {
             view.hideLoading()
+            view.hideSwipeRefresh()
             view.displayFootballMatch(eventList)
         }
     }

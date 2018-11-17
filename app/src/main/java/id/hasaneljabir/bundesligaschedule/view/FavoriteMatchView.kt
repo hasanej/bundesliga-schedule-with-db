@@ -7,6 +7,7 @@ interface FavoriteMatchView {
         fun hideLoading()
         fun showLoading()
         fun displayFootballMatch(matchList: List<EventData>)
+        fun hideSwipeRefresh()
     }
 
     interface Presenter {

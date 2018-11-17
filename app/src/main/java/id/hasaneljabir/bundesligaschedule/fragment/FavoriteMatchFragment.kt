@@ -38,6 +38,9 @@ class FavoriteMatchFragment : Fragment(), FavoriteMatchView.View {
         presenter = FavoriteMatchPresenter(this, request, localRepositoryImpl, scheduler)
         presenter.getFootballMatchData()
 
+        swipeRefreshFavMatch.setOnRefreshListener {
+            presenter.getFootballMatchData()
+        }
     }
 
     override fun hideLoading() {
@@ -48,6 +51,12 @@ class FavoriteMatchFragment : Fragment(), FavoriteMatchView.View {
     override fun showLoading() {
         progressBar.visible()
         rvFavMatch.visibility = View.INVISIBLE
+    }
+
+    override fun hideSwipeRefresh() {
+        swipeRefreshFavMatch.isRefreshing = false
+        progressBar.invisible()
+        rvFavMatch.visibility = View.VISIBLE
     }
 
     override fun displayFootballMatch(matchList: List<EventData>) {
