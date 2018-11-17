@@ -6,18 +6,18 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import id.hasaneljabir.bundesligaschedule.view.MatchView
+import id.hasaneljabir.bundesligaschedule.R
+import id.hasaneljabir.bundesligaschedule.adapter.MatchListAdapter
+import id.hasaneljabir.bundesligaschedule.api.ApiServices
+import id.hasaneljabir.bundesligaschedule.api.ApiUrl
 import id.hasaneljabir.bundesligaschedule.model.EventData
 import id.hasaneljabir.bundesligaschedule.presenter.NextMatchPresenter
-import id.hasaneljabir.bundesligaschedule.R
-import id.hasaneljabir.bundesligaschedule.api.ApiUrl
-import id.hasaneljabir.bundesligaschedule.api.ApiServices
 import id.hasaneljabir.bundesligaschedule.repository.MatchRepositoryImplementation
 import id.hasaneljabir.bundesligaschedule.utils.AppSchedulerProvider
-import kotlinx.android.synthetic.main.fragment_next_match.*
-import id.hasaneljabir.bundesligaschedule.adapter.MatchListAdapter
 import id.hasaneljabir.bundesligaschedule.utils.invisible
 import id.hasaneljabir.bundesligaschedule.utils.visible
+import id.hasaneljabir.bundesligaschedule.view.MatchView
+import kotlinx.android.synthetic.main.fragment_next_match.*
 
 class NextMatchFragment : Fragment(), MatchView.View {
     private var matchLists: MutableList<EventData> = mutableListOf()
